@@ -1,9 +1,25 @@
-%h1= @pin.title
-%p= @pin.description
-%p
-Crée par
-=@pin.user.email
-%br/
-= link_to "Back", root_path
-=link_to "Edit", edit_pin_path
-=link_to "Delete", pin_path, method: :delete, data: {confirm: " Etes vous sure?"}
+#pins_show.row
+	.col-md-8.col-md-offset-2
+		.panel.panel-default
+			.panel-heading.pin_image
+				=image_tag @pin.image.url(:medium)
+			.panel-body
+				%h1= @pin.title
+				%p.description= @pin.description
+				%p
+				Crée par
+				=@pin.user.email
+			.panel-footer
+				.row
+					.col-md-6
+						%p.user
+						Proposé par
+						=@pin.user.email
+					.col-md-6
+						.btn-group.pull-right
+							=link_to fleur_pin_path(@pin), method: :put, class: "btn btn-default" do
+								%span.glyphicon.glyphicon-leaf
+									=@pin.get_upvotes.size
+							- if user_signed_in?
+								=link_to "Edit", edit_pin_path, class: "btn btn-default"
+								=link_to "Delete", pin_path, method: :delete, data: {confirm: " Etes vous sure?"}, class: "btn btn-default"
