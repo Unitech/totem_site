@@ -11,5 +11,7 @@
 				Proposé par
 				=pin.user.email
 				%p.tags
-				=pin.tag_list
+				- pin.tag_list.each do |tag|
+					%span.label.label-teal
+						=link_to tag
 				

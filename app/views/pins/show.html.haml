@@ -14,7 +14,9 @@
 						Proposé par
 						=@pin.user.email
 						%p.tags
-						=@pin.tag_list
+						-@pin.tag_list.each do |tag|
+							%span.label.label-teal
+								=link_to tag, tag_path(tag)
 					.col-md-6
 						.btn-group.pull-right
 							=link_to fleur_pin_path(@pin), method: :put, class: "btn btn-default" do
