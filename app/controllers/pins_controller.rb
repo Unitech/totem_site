@@ -5,7 +5,7 @@ class PinsController < ApplicationController
 
 
 	def index
-		@pins= Pin.all.order("created_at DESC")
+    	@pins= Pin.all.order("created_at DESC")
 	end
 
 	def show
@@ -47,7 +47,7 @@ class PinsController < ApplicationController
 	end
 	private
 	def pin_params
-		params.require(:pin).permit(:title,:description, :image)
+		params.require(:pin).permit(:title,:description, :image, :tag_list)
 	end
 	def find_pin
 		@pin =Pin.find(params[:id])
