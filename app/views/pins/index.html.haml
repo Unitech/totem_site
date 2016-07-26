@@ -1,3 +1,6 @@
+#tag_cloud
+	- tag_cloud Pin.tag_counts, %w[s m l] do |tag, css_class|
+		=link_to tag, tag_path(tag.name), class: css_class
 #pins.transitions-enabled
 	- @pins.each do |pin|
 		.box.panel.panel-default
@@ -13,5 +16,5 @@
 				%p.tags
 				- pin.tag_list.each do |tag|
 					%span.label.label-teal
-						=link_to tag
+						=link_to tag, tag_path(tag)
 				
