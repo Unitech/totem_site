@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802185232) do
+ActiveRecord::Schema.define(version: 20160803144029) do
+
+  create_table "participations", force: :cascade do |t|
+    t.integer  "participant_id"
+    t.integer  "pin_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "participations", ["participant_id"], name: "index_participations_on_participant_id"
+  add_index "participations", ["pin_id"], name: "index_participations_on_pin_id"
 
   create_table "pins", force: :cascade do |t|
     t.string   "title"

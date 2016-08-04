@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :pins do
     member do
       put "fleur", to: "pins#upvote"
+      patch 'participate'
+      patch 'stop_participating'
     end
   end
   root "pins#index"
