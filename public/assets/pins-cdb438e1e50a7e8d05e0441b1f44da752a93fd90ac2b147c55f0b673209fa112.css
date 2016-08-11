@@ -1,0 +1,17 @@
+/* line 5, /Users/victormatei/Documents/totem_site/app/assets/stylesheets/pins.scss */
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+}
+/* line 8, /Users/victormatei/Documents/totem_site/app/assets/stylesheets/pins.scss */
+#tag_cloud .s {
+  font-size: 0.8em;
+}
+/* line 9, /Users/victormatei/Documents/totem_site/app/assets/stylesheets/pins.scss */
+#tag_cloud .m {
+  font-size: 1.2em;
+}
+/* line 10, /Users/victormatei/Documents/totem_site/app/assets/stylesheets/pins.scss */
+#tag_cloud .l {
+  font-size: 1.8em;
+}
