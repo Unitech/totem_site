@@ -11,4 +11,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( search.js )
 
 Rails.application.config.assets.compile = true
-Rails.application.config.assets.precompile =  ['*.js', '*.css', '*.css.scss' '*.scss']
+#Rails.application.config.assets.precompile =  ['*.js', '*.css', '*.css.scss' '*.scss']
