@@ -9,17 +9,17 @@
         - @pin.errors.full_messages.each do |msg|
           %li= msg
   .form-group
-    = f.input :image, input_html: {class: 'form-control'}
+    = f.input :image, label: 'Image cool pas trop lourde et pas de nom compliqué au risque de foirer', input_html: {class: 'form-control'}
 
   .form-group
-    = f.input :title, input_html: {class: 'form-control'}
+    = f.input :title, label: 'Nom du projet', placeholder:'Champ lexical du rêve troubadour new age par là', input_html: {class: 'form-control'}
 
   .form-group
-    = f.input :description, input_html: {class: 'form-control'}
+    = f.input :description, label: 'Description', placeholder:'Dites aussi pliz le matos que vous avez déjà et dont vous avez besoin, peut-être les gens vous aident après, surtout si vous le demandez', input_html: {class: 'form-control'}
 
   .form-group
-    = f.input :tag_list, input_html: {class: 'form-control'}
+    = f.input :tag_list, label: 'Tags', placeholder: 'séparés par des virgules et sans majuscules', input_html: {class: 'form-control'}
 
   .clearfix
-    = f.button :submit, class: "btn btn-primary pull-right"
+    = f.button :submit, 'Créer le projet', class: "btn btn-primary pull-right"
     = link_to "Back", locals[:return_path], class: 'pull-left'
