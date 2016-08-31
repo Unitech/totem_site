@@ -26,10 +26,10 @@
                 %span.glyphicon.glyphicon-leaf
                   = @pin.get_upvotes.size
 
-              - if current_user == @pin.admin
+              - if @user == @pin.admin
                 = link_to "Edit", edit_pin_path(@pin), class: "btn btn-default"
                 = link_to "Delete", pin_path(@pin), method: :delete, data: {confirm: " Etes vous sure?"}, class: "btn btn-danger"
-              - elsif @pin.has_participant(current_user)
+              - elsif @pin.has_participant(@user)
                 = link_to "Stop participating", stop_participating_pin_path(@pin), method: :patch, class: "btn btn-danger"
               - else
                 = link_to "Participate", participate_pin_path(@pin), method: :patch, class: "btn btn-success"
